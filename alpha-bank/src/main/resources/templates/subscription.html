@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="base">
+
+<head>
+<title>Getting Started: Serving Web Content</title>
+</head>
+<body>
+	<div layout:fragment="content" id="content">
+		<p th:text=" ${subscription.id}" />
+		<p th:text=" ${subscription.subType}" />
+		<p th:text=" ${subscription.active}" />
+		<p th:text=" ${subscription.compId}" />
+		<p th:text=" ${subscription.contPersId}" />
+		<p th:text=" ${subscription.productLastChanged}" />
+		<p th:text=" ${subscription.langId}" />
+		<p th:text=" ${subscription.applicationProvId}" />
+		<p th:text=" ${subscription.applicationBranch}" />
+		<p th:text=" ${subscription.creationDate}" />
+		<p th:text=" ${subscription.signDate}" />
+		<p th:text=" ${subscription.signProvId}" />
+		<p th:text=" ${subscription.signBranch}" />
+		<p th:text=" ${subscription.basicProdId}" />
+		<p th:text=" ${subscription.personalCompName}" />
+		<p th:text=" ${subscription.personalCompTitle}" />
+		<p th:text=" ${subscription.deactivatedTransId}" />
+		<p th:text=" ${subscription.maxApprLevel}" />
+		<p th:text=" ${subscription.maxApprLevelForSubsMaintenance}" />
+		<p th:text=" ${subscription.administrtationUnit}" />
+		<p th:text="${subscription.customerGeneralID}" />
+	</div>
+</body>
+</html>
