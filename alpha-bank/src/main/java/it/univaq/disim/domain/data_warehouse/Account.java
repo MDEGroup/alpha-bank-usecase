@@ -3,11 +3,14 @@ package it.univaq.disim.domain.data_warehouse;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 @Entity
 public class Account {
 	@Id
-	private long AC_ID;
+	@GeneratedValue( strategy = GenerationType.IDENTITY )
+	private long id;
 	private long AC_CTR_ID;
 	private long AC_PROD_ID;
 	private long AC_OBLG_ID;
@@ -27,11 +30,11 @@ public class Account {
 	private String AC_APL_NUM;
 	private String AC_SYND_IND;
 	
-	public long getAC_ID() {
-		return AC_ID;
+	public long getId() {
+		return id;
 	}
-	public void setAC_ID(long aC_ID) {
-		AC_ID = aC_ID;
+	public void setId(long id) {
+		this.id = id;
 	}
 	public long getAC_CTR_ID() {
 		return AC_CTR_ID;

@@ -1,37 +1,53 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
-<head> 
-    <title>Getting Started: Serving Web Content</title> 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="base">
+<head>
+<title>Alpha-Bank</title>
 </head>
 <body>
-<table>
-   <th:block th:each="subscription : ${subscriptions}" border="1">
-      <tr>
-		<td><a th:href="@{'/web/web-banking/subscription/' + ${subscription.id}}">view</a></td>
-		<td th:text=" ${subscription.subType}" >...</td>
-		<td th:text=" ${subscription.active}" >...</td>
-		<td th:text=" ${subscription.compId}" >...</td>
-		<td th:text=" ${subscription.contPersId}" >...</td>
-		<td th:text=" ${subscription.productLastChanged}" >...</td>
-		<td th:text=" ${subscription.langId}" >...</td>
-		<td th:text=" ${subscription.applicationProvId}" >...</td>
-		<td th:text=" ${subscription.applicationBranch}" >...</td>
-		<td th:text=" ${subscription.creationDate}" >...</td>
-		<td th:text=" ${subscription.signDate}" >...</td>
-		<td th:text=" ${subscription.signProvId}" >...</td>
-		<td th:text=" ${subscription.signBranch}" >...</td>
-		<td th:text=" ${subscription.basicProdId}" >...</td>
-		<td th:text=" ${subscription.personalCompName}" >...</td>
-		<td th:text=" ${subscription.personalCompTitle}" >...</td>
-		<td th:text=" ${subscription.deactivatedTransId}" >...</td>
-		<td th:text=" ${subscription.maxApprLevel}" >...</td>
-		<td th:text=" ${subscription.maxApprLevelForSubsMaintenance}" >...</td>
-		<td th:text=" ${subscription.administrtationUnit}" >...</td>
-		<td th:text="${subscription.customerGeneralID}" >...</td>
-      </tr>
-   </th:block>
-   <div th:include="footer :: copy"></div>
-</table>
+	<div layout:fragment="content" id="content">
+		<h2>Subscriptions</h2>
+		<table class="table table-bordered table-striped mb-0">
+
+			<thead>
+				<tr>
+					<th>Link</th>
+					<th>subType</th>
+					<th>active</th>
+					<th>compId</th>
+					<th>contPersId</th>
+					<th>productLastChanged</th>
+					<th>langId</th>
+					<th>applicationProvId</th>
+					<th>applicationBranch</th>
+					<th>creationDate</th>
+					<th>signDate</th>
+					<th>signProvId</th>
+					<th>customerGeneralID</th>
+				</tr>
+			</thead>
+			<th:block th:each="subscription : ${subscriptions}" border="1">
+				<tr>
+					<td><a
+						th:href="@{'/web/web-banking/subscription/' + ${subscription.id}}">view</a></td>
+					<td th:text=" ${subscription.subType}">...</td>
+					<td th:text=" ${subscription.active}">...</td>
+					<td th:text=" ${subscription.compId}">...</td>
+					<td th:text=" ${subscription.contPersId}">...</td>
+					<td th:text=" ${subscription.productLastChanged}">...</td>
+					<td th:text=" ${subscription.langId}">...</td>
+					<td th:text=" ${subscription.applicationProvId}">...</td>
+					<td th:text=" ${subscription.applicationBranch}">...</td>
+					<td th:text=" ${subscription.creationDate}">...</td>
+					<td th:text=" ${subscription.signDate}">...</td>
+					<td th:text=" ${subscription.signProvId}">...</td>
+
+					<td th:text="${subscription.customerGeneralID}">...</td>
+				</tr>
+			</th:block>
+		</table>
+	</div>
 </body>
 </html>

@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="base">
+<head>
+<title>Alpha-Bank</title>
+</head>
+<body>
+	<div layout:fragment="content" id="content">
+		<h2>Accounts</h2>
+		<table class="table table-bordered table-striped mb-0">
+
+			<thead>
+				<tr>
+					<th>View</th>
+					<th>AC_CTR_ID</th>
+					<th>AC_PROD_ID</th>
+					<th>AC_OBLG_ID</th>
+					<th>AC_LOAN_AC_ID</th>
+					<th>AC_CLS_DT</th>
+					<th>AC_SVC_TP_DSC</th>
+					<th>AC_HOST_CODE</th>
+					<th>AC_APL_NUM</th>
+					<th>AC_SYND_IND</th>
+				</tr>
+			</thead>
+			<th:block th:each="subscription : ${subscriptions}" border="1">
+				<tr>
+					<td><a
+						th:href="@{'/web/data-warehouse/account/' + ${subscription.id}}">view</a></td>
+					<td th:text=" ${subscription.AC_CTR_ID}">...</td>
+					<td th:text=" ${subscription.AC_PROD_ID}">...</td>
+					<td th:text=" ${subscription.AC_OBLG_ID}">...</td>
+					<td th:text=" ${subscription.AC_LOAN_AC_ID}">...</td>
+					<td th:text=" ${subscription.AC_CLS_DT}">...</td>
+					<td th:text=" ${subscription.AC_SVC_TP_DSC}">...</td>
+					<td th:text=" ${subscription.AC_HOST_CODE}">...</td>
+					<td th:text=" ${subscription.AC_APL_NUM}">...</td>
+					<td th:text=" ${subscription.AC_SYND_IND}">...</td>
+				</tr>
+			</th:block>
+		</table>
+	</div>
+</body>
+</html>

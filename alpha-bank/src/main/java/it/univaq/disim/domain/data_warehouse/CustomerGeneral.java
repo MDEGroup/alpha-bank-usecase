@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class CustomerGeneral {
 	@Id
 	@GeneratedValue( strategy = GenerationType.IDENTITY )
-	private long OBLG_ID;
+	private long id;
 	private long OBLG_GRP_ID;
 	private String OBLG_GRP_CODE;
 	private long OBLG_SVC_BR_ID;
@@ -33,12 +33,12 @@ public class CustomerGeneral {
 	private String OBLG_SHRT_NM;
 	
 
-	public long getOBLG_ID() {
-		return OBLG_ID;
+	public long getId() {
+		return id;
 	}
 
-	public void setOBLG_ID(long oBLG_ID) {
-		OBLG_ID = oBLG_ID;
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public long getOBLG_GRP_ID() {

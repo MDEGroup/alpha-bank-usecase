@@ -3,13 +3,12 @@
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorator="base">
-
 <head>
-<title>Getting Started: Serving Web Content</title>
+<title>Subscription</title>
 </head>
 <body>
 	<div layout:fragment="content" id="content">
-		<p th:text=" ${subscription.id}" />
+	<h2>Subscription details</h2>
 		<p th:text=" ${subscription.subType}" />
 		<p th:text=" ${subscription.active}" />
 		<p th:text=" ${subscription.compId}" />
@@ -29,7 +28,28 @@
 		<p th:text=" ${subscription.maxApprLevel}" />
 		<p th:text=" ${subscription.maxApprLevelForSubsMaintenance}" />
 		<p th:text=" ${subscription.administrtationUnit}" />
-		<p th:text="${subscription.customerGeneralID}" />
+		<p th:text=" ${subscription.customerGeneralID}" />
+		<p th:text=" ${subscription.customerGeneral?.OBLG_GRP_ID}"/>
+		<p th:text=" ${subscription.customerGeneral?.OBLG_GRP_CODE}"/>
+		<p th:text=" ${subscription.customerGeneral?.OBLG_SVC_BR_ID}"/>
+		<p th:text=" ${subscription.customerGeneral?.OBLG_TP_OF_ENT_ID}"/>
+		<p th:text=" ${subscription.customerGeneral?.OBLG_CO_TP_ID}"/>
+		<p th:text=" ${subscription.customerGeneral?.OBLG_CTF_TP_ID}"/>
+		<p th:text=" ${subscription.customerGeneral?.OBLG_CDI_CODE}"/>
+		<p th:text=" ${subscription.customerGeneral?.OBLG_IDENTN_NUM}"/>
+		<p th:text=" ${subscription.customerGeneral?.OBLG_IDENTN_TP_ID}"/>
+		<p th:text=" ${subscription.customerGeneral?.OBLG_IDENTN_TP_CODE}"/>
+		<p th:text=" ${subscription.customerGeneral?.OBLG_IDENTN_TP_DSC}"/>
+		<p th:text=" ${subscription.customerGeneral?.OBLG_TAX_NUM}"/>
+		<p th:text=" ${subscription.customerGeneral?.OBLG_WHLSL_IND_ID}"/>
+		<p th:text=" ${subscription.customerGeneral?.OBLG_WHLSL_IND_CODE}"/>
+		<p th:text=" ${subscription.customerGeneral?.OBLG_WHLSL_IND_DSC}"/>
+		<p th:text=" ${subscription.customerGeneral?.OBLG_CTF_CODE}"/>
+		<p th:text=" ${subscription.customerGeneral?.OBLG_ISIN_CODE}"/>
+		<p th:text=" ${subscription.customerGeneral?.OBLG_RGST_NM}"/>
+		<p th:text=" ${subscription.customerGeneral?.OBLG_NM}"/>
+		<p th:text=" ${subscription.customerGeneral?.OBLG_SURNM}"/>
+		<p th:text=" ${subscription.customerGeneral?.OBLG_SHRT_NM}"/>
 	</div>
 </body>
 </html>

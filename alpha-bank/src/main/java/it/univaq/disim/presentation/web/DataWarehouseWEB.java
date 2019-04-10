@@ -9,37 +9,40 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import it.univaq.disim.domain.data_warehouse.Account;
+import it.univaq.disim.domain.data_warehouse.CustomerGeneral;
 import it.univaq.disim.domain.web_banking.Subscription;
 import it.univaq.disim.domain.web_banking.User;
+import it.univaq.disim.service.DataWarehouseService;
 import it.univaq.disim.service.WebBankingService;
 
 @Controller
-@RequestMapping("/web/web-banking")
-public class WebBankingWEB {
+@RequestMapping("/web/data-warehouse")
+public class DataWarehouseWEB {
 	@Autowired
-	private WebBankingService wbService;
-    @GetMapping("/subscription/{id}")
-    public String getSubscription(@PathVariable String id, Model model) {
-    	Subscription value = wbService.findSubscriptionById(id);
+	private DataWarehouseService dwhService;
+    @GetMapping("/account/{id}")
+    public String getSubscription(@PathVariable Long id, Model model) {
+    	Account value = dwhService.findAccountById(id);
         model.addAttribute("subscription", value);
-        return "subscription";
+        return "account";
     }
-    @GetMapping("/subscription")
+    @GetMapping("/account")
     public String getSubscriptions(Model model) {
-    	List<Subscription> value = wbService.findAllSubscription();
+    	List<Account> value = dwhService.findAllAccount();
         model.addAttribute("subscriptions", value);
-        return "subscriptions";
+        return "accounts";
     }
-    @GetMapping("/user/{id}")
-    public String getUser(@PathVariable String id, Model model) {
-    	User value = wbService.findUserById(id);
+    @GetMapping("/customer/{id}")
+    public String getUser(@PathVariable Long id, Model model) {
+    	CustomerGeneral value = dwhService.findCustomerGeneralById(id);
         model.addAttribute("subscription", value);
-        return "user";
+        return "customer";
     }
-    @GetMapping("/user")
+    @GetMapping("/customer")
     public String getUsers(Model model) {
-    	List<User> value = wbService.findAllUser();
+    	List<CustomerGeneral> value = dwhService.findAllCustomerGeneral();
         model.addAttribute("subscriptions", value);
-        return "users";
+        return "customers";
     }
 }
