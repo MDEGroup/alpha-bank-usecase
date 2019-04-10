@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="base">
+<head>
+<title>Alpha-Bank</title>
+</head>
+<body>
+	<div layout:fragment="content" id="content">
+	<h2>User details</h2>
+		<p th:text=" ${subscription.UserId}" />
+		<p th:text=" ${subscription.PersId}" />
+		<p th:text=" ${subscription.Active}" />
+		<p th:text=" ${subscription.UnsucVerif}" />
+		<p th:text=" ${subscription.UserGrpId}" />
+		<p th:text=" ${subscription.SubsId}" />
+		<p th:text=" ${subscription.UserType}" />
+		<p th:text=" ${subscription.MustApprGlProf}" />
+		<p th:text=" ${subscription.LastSignOnDateTime}" />
+		<p th:text=" ${subscription.LastSignOnChannelId}" />
+		<p th:text=" ${subscription.MaxSessionTime}" />
+		<p th:text=" ${subscription.MaxInactivityTime}" />
+	</div>
+</body>
+</html>

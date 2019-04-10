@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="base">
+<head>
+<title>Alpha-Bank</title>
+</head>
+<body>
+	<div layout:fragment="content" id="content">
+		<h2>Customer details</h2>
+		<p th:text=" ${subscription.OBLG_GRP_ID}" />
+		<p th:text=" ${subscription.OBLG_GRP_CODE}" />
+		<p th:text=" ${subscription.OBLG_SVC_BR_ID}" />
+		<p th:text=" ${subscription.OBLG_TP_OF_ENT_ID}" />
+		<p th:text=" ${subscription.OBLG_CO_TP_ID}" />
+		<p th:text=" ${subscription.OBLG_CTF_TP_ID}" />
+		<p th:text=" ${subscription.OBLG_CDI_CODE}" />
+		<p th:text=" ${subscription.OBLG_IDENTN_NUM}" />
+		<p th:text=" ${subscription.OBLG_IDENTN_TP_ID}" />
+		<p th:text=" ${subscription.OBLG_IDENTN_TP_CODE}" />
+		<p th:text=" ${subscription.OBLG_IDENTN_TP_DSC}" />
+		<p th:text=" ${subscription.OBLG_TAX_NUM}" />
+		<p th:text=" ${subscription.OBLG_WHLSL_IND_ID}" />
+		<p th:text=" ${subscription.OBLG_WHLSL_IND_CODE}" />
+		<p th:text=" ${subscription.OBLG_WHLSL_IND_DSC}" />
+		<p th:text=" ${subscription.OBLG_CTF_CODE}" />
+		<p th:text=" ${subscription.OBLG_ISIN_CODE}" />
+		<p th:text=" ${subscription.OBLG_RGST_NM}" />
+		<p th:text=" ${subscription.OBLG_NM}" />
+		<p th:text=" ${subscription.OBLG_SURNM}" />
+		<p th:text=" ${subscription.OBLG_SHRT_NM}" />
+	</div>
+</body>
+</html>

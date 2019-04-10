@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="base">
+<head>
+<title>Subscription</title>
+</head>
+<body>
+	<div layout:fragment="content" id="content">
+		<h2>Subscription details</h2>
+		<p th:text=" ${subscription.subType}" />
+		<p th:text=" ${subscription.active}" />
+		<p th:text=" ${subscription.compId}" />
+		<p th:text=" ${subscription.contPersId}" />
+		<p th:text=" ${subscription.productLastChanged}" />
+		<p th:text=" ${subscription.langId}" />
+		<p th:text=" ${subscription.applicationProvId}" />
+		<p th:text=" ${subscription.applicationBranch}" />
+		<p th:text=" ${subscription.creationDate}" />
+		<p th:text=" ${subscription.signDate}" />
+		<p th:text=" ${subscription.signProvId}" />
+		<p th:text=" ${subscription.signBranch}" />
+		<p th:text=" ${subscription.basicProdId}" />
+		<p th:text=" ${subscription.personalCompName}" />
+		<p th:text=" ${subscription.personalCompTitle}" />
+		<p th:text=" ${subscription.deactivatedTransId}" />
+		<p th:text=" ${subscription.maxApprLevel}" />
+		<p th:text=" ${subscription.maxApprLevelForSubsMaintenance}" />
+		<p th:text=" ${subscription.administrtationUnit}" />
+		<th:block th:each="my : ${subscription.customerGeneralObj}"	border="1">
+			<hr />
+				
+			<h2>Customer General list</h2>
+			<p th:text=" ${my.OBLG_GRP_CODE}" />
+			<p th:text=" ${my.OBLG_SVC_BR_ID}" />
+			<p th:text=" ${my.OBLG_TP_OF_ENT_ID}" />
+			<p th:text=" ${my.OBLG_CO_TP_ID}" />
+			<p th:text=" ${my.OBLG_CTF_TP_ID}" />
+			<p th:text=" ${my.OBLG_CDI_CODE}" />
+			<p th:text=" ${my.OBLG_IDENTN_NUM}" />
+			<p th:text=" ${my.OBLG_IDENTN_TP_ID}" />
+			<p th:text=" ${my.OBLG_IDENTN_TP_CODE}" />
+			<p th:text=" ${my.OBLG_IDENTN_TP_DSC}" />
+			<p th:text=" ${my.OBLG_TAX_NUM}" />
+			<p th:text=" ${my.OBLG_WHLSL_IND_ID}" />
+			<p th:text=" ${my.OBLG_WHLSL_IND_CODE}" />
+			<p th:text=" ${my.OBLG_WHLSL_IND_DSC}" />
+			<p th:text=" ${my.OBLG_CTF_CODE}" />
+			<p th:text=" ${my.OBLG_ISIN_CODE}" />
+			<p th:text=" ${my.OBLG_RGST_NM}" />
+			<p th:text=" ${my.OBLG_NM}" />
+			<p th:text=" ${my.OBLG_SURNM}" />
+			<p th:text=" ${my.OBLG_SHRT_NM}" />
+		</th:block>
+	</div>
+</body>
+</html>

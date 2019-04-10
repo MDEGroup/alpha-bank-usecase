@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="base">
+<head>
+<title>Alpha-bank</title>
+</head>
+<body>
+	<div layout:fragment="content" id="content">
+		<h2>Customers</h2>
+		<table class="table table-bordered table-striped mb-0">
+
+			<thead>
+				<tr>
+					<th>View</th>
+					<th>OBLG_GRP_ID</th>
+					<th>OBLG_GRP_CODE</th>
+					<th>OBLG_SVC_BR_ID</th>
+					<th>OBLG_TP_OF_ENT_ID</th>
+					<th>OBLG_CO_TP_ID</th>
+					<th>OBLG_CTF_TP_ID</th>
+					<th>OBLG_CDI_CODE</th>
+					<th>OBLG_SHRT_NM</th>
+				</tr>
+			</thead>
+			<th:block th:each="subscription : ${subscriptions}" border="1">
+				<tr>
+					<td><a
+						th:href="@{'/web/data-warehouse/customer/' + ${subscription.id}}">view</a></td>
+					<td th:text=" ${subscription.OBLG_GRP_ID}">...</td>
+					<td th:text=" ${subscription.OBLG_GRP_CODE}">...</td>
+					<td th:text=" ${subscription.OBLG_SVC_BR_ID}">...</td>
+					<td th:text=" ${subscription.OBLG_TP_OF_ENT_ID}">...</td>
+					<td th:text=" ${subscription.OBLG_CO_TP_ID}">...</td>
+					<td th:text=" ${subscription.OBLG_CTF_TP_ID}">...</td>
+					<td th:text=" ${subscription.OBLG_CDI_CODE}">...</td>
+					<td th:text=" ${subscription.OBLG_SHRT_NM}">...</td>
+				</tr>
+			</th:block>
+		</table>
+	</div>
+</body>
+</html>

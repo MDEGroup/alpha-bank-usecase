@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="base">
+<head>
+<title>Alpha-Bank</title>
+</head>
+<body>
+	<div layout:fragment="content" id="content">
+	<h2>Account details</h2>
+		<p th:text=" ${subscription.id}" />
+		<p th:text=" ${subscription.AC_CTR_ID}" />
+		<p th:text=" ${subscription.AC_PROD_ID}" />
+		<p th:text=" ${subscription.AC_OBLG_ID}" />
+		<p th:text=" ${subscription.AC_LOAN_AC_ID}" />
+		<p th:text=" ${subscription.AC_MNT_SVC_BR_ID}" />
+		<p th:text=" ${subscription.AC_WHLSL_DNCMT_ID}" />
+		<p th:text=" ${subscription.AC_DNCMT_WHLSL_COLL_DEPT_FILE_NUM}" />
+		<p th:text=" ${subscription.AC_OBLG_CDI_CODE}" />
+		<p th:text=" ${subscription.AC_OBLG_IDENTN_NUM}" />
+		<p th:text=" ${subscription.AC_OBLG_IDENTN_TP_DSC}" />
+		<p th:text=" ${subscription.AC_LMT_CODE}" />
+		<p th:text=" ${subscription.AC_OPN_DT}" />
+		<p th:text=" ${subscription.AC_CLS_DT}" />
+		<p th:text=" ${subscription.AC_SVC_TP_DSC}" />
+		<p th:text=" ${subscription.AC_HOST_CODE}" />
+		<p th:text=" ${subscription.AC_INT_CLCN_IN_ADV}" />
+		<p th:text=" ${subscription.AC_APL_NUM}" />
+		<p th:text=" ${subscription.AC_SYND_IND}" />
+	</div>
+</body>
+</html>

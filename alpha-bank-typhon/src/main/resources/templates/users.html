@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="base">
+<head>
+<title>Alpha-bank</title>
+</head>
+<body>
+	<div layout:fragment="content" id="content">
+		<h2>Users</h2>
+		<table class="table table-bordered table-striped mb-0">
+
+			<thead>
+				<tr>
+					<th>View</th>
+					<th>UserId</th>
+					<th>PersId</th>
+					<th>Active</th>
+					<th>UnsucVerif</th>
+					<th>UserGrpId</th>
+					<th>SubsId</th>
+					<th>UserType</th>
+					<th>MustApprGlProf</th>
+					<th>LastSignOnDateTime</th>
+					<th>LastSignOnChannelId</th>
+					<th>MaxSessionTime</th>
+					<th>MaxInactivityTime</th>
+				</tr>
+			</thead>
+			<th:block th:each="subscription : ${subscriptions}" border="1">
+				<tr>
+					<td><a
+						th:href="@{'/web/web-banking/user/' + ${subscription.id}}">view</a></td>
+					<td th:text=" ${subscription.UserId}" />
+					<td th:text=" ${subscription.PersId}" />
+					<td th:text=" ${subscription.Active}" />
+					<td th:text=" ${subscription.UnsucVerif}" />
+					<td th:text=" ${subscription.UserGrpId}" />
+					<td th:text=" ${subscription.SubsId}" />
+					<td th:text=" ${subscription.UserType}" />
+					<td th:text=" ${subscription.MustApprGlProf}" />
+					<td th:text=" ${subscription.LastSignOnDateTime}" />
+					<td th:text=" ${subscription.LastSignOnChannelId}" />
+					<td th:text=" ${subscription.MaxSessionTime}" />
+					<td th:text=" ${subscription.MaxInactivityTime}" />
+				</tr>
+			</th:block>
+		</table>
+	</div>
+</body>
+</html>
